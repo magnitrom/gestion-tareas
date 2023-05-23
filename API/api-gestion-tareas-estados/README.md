@@ -1,7 +1,7 @@
 ## 🚀 api-gestion-tareas-estados
 ***
 
-Api que realiza la adiministracion de la gestion de tareas.
+Api que realiza la adiministracion de la gestion de estados.
 
 # 🛅 Tecnología 
 ***

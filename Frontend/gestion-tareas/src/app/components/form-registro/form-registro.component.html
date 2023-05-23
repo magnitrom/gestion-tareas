@@ -1,0 +1,63 @@
+<div style="margin-top: 5%;">
+    <div class="col s12 m4 l4 offset-m4 offset-l4">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="col s12">
+                            <h3 class="center">Gestión de Tareas</h3>
+                            <br>
+                            <h5 class="center">Creación de Usuario</h5>
+                        </div>
+                    </div>
+                    <form class="col s12" [formGroup]="formGroup" (ngSubmit)='submit()'>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">face</i>
+                                <input id="usuario" type="text" class="validate" formControlName="usuario">
+                                <label for="usuario">Usuario</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="nombre" type="text" class="validate" formControlName="nombre">
+                                <label for="nombre">Nombre</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">alternate_email</i>
+                                <input id="correoElectronico" type="email" class="validate" formControlName="correoElectronico">
+                                <label for="correoElectronico">Correo Electrónico</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">password</i>
+                                <input id="contrasenia" type="password" class="validate" formControlName="contrasenia">
+                                <label for="contrasenia">Contraseña</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="contrasenia_2" type="password" class="validate" formControlName="contrasenia_2">
+                                <label for="contrasenia_2">Confirme la Contraseña</label>
+                            </div>
+                        </div>
+                        <div class="card-panel"
+                            *ngIf="(this.formGroup.getRawValue().contrasenia != '' && this.formGroup.getRawValue().contrasenia_2 != '') && this.formGroup.getRawValue().contrasenia != this.formGroup.getRawValue().contrasenia_2 ">
+                            <span class="red-text text-accent-4">Las contraseñas que ingresó no son iguales.</span>
+                        </div>
+            
+                        <div class="row">
+                            <div class=" col s3 offset-s7" >
+                                <button class="waves-effect waves-light btn col s12 green"
+                                    [disabled]="this.formGroup.invalid">Registrarse</button>
+                            </div>
+                            <div class=" col s2 ">                    
+                                <a class="waves-effect waves-light btn col s12 blue" (click)="btnRegresar()">Regresar</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div>
+    <div class="col s12 m4 l4 offset-m4 offset-l4">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="col s12 center">
+                        <h3 class="center">Gestión de Tareas</h3>
+                        <br>
+                        <img class="center" height="70px" alt="Logo" src="/assets/img/logo.png">
+                        <h5 class="center">Inicio de Sesión</h5>
+                    </div>
+                    <form class="col s12" (ngSubmit)='btnLogin()'>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="correo_electronico" type="email" name="correo_electronico"
+                                    [(ngModel)]="correo_electronico" class="validate">
+                                <label for="correo_electronico">Correo Electrónico</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input id="password" name="password" type="password" [(ngModel)]="pass" class="validate">
+                                <label for="password">Contraseña</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class=" col s6 offset-s3">
+                                <button class="waves-effect waves-light btn col s12 green"
+                                    [disabled]="correo_electronico == '' || pass == ''">Iniciar sesion</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
